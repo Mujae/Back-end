@@ -79,7 +79,7 @@ def unfollow():
 @app.route('/timeline/<int:user_id>', methods=['GET'])
 def timeline(user_id):
     if user_id not in app.users:
-        return '사용자 X요~ 가세요라', 400
+        return '사용자자가 존재하지 않습니다. 가세요라.', 400
     
     follow_list = app.users[user_id].get('follow', set())
     follow_list.add(user_id)
